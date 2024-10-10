@@ -63,3 +63,52 @@ t.test(x, mu=1,  alternative="greater", conf.level = 0.95)
  prop.test(x= 152, n= 580, p=0.25)
  
  ### com um p-value de 0.5331 não rejeita a H0, a proporção estando em um intervaldo de 0.2271103 e 0.3002337
+ 
+ # Questão 4. Teste para comparar médias de duas amostras pareadas
+
+ # h0 = se o uso de novo tipo de pneus aumenta a economia de combustı́vel de sua frota
+ #amostra 1 = 12 carros com pneu traticional
+ #amostra 1 = 12 carros com pneu novo
+ 
+ csv= read.csv2("data/Questao04.csv")
+ 
+ amostra1 = csv$Km.L.pneus.tradicionais
+ 
+ amostra2 = csv$Km.L.pneus.novos 
+
+ t.test(amostra1, amostra2, paired = TRUE)
+
+ 
+# Teste para comparar médias de duas amostras independentes 
+ 
+ # h0 = á uma diferença entre os nı́veis de ácido ascórbicono plasma de fumantes e não fumantesa
+ #amostra 1 = não fumantes
+ #amostra 1 = fumantes
+ 
+ csv = read.csv2("data/Questao05.csv")
+
+ amostra1 = csv$Nao.Fumantes
+ 
+ amostra2 = csv$Fumantes 
+
+ var.test(amostra1, amostra2, paired = FALSE)
+ ## erro 
+ 
+ # Questão 6. Teste para comparar médias de duas amostras independentes
+ 
+ # h0 = existe diferença significativa entre as alturas das plantas em relação ao tipo de aduboa
+ #amostra 1 = altura das plantas adubadas com adubo quı́mico
+ #amostra 1 = altura das adubbadas com adubo orgânico
+ 
+ csv = read.csv2("data/Questao06.csv")
+ 
+ amostra1 = csv$Quimica
+ 
+ amostra2 = csv$Organica 
+ 
+ var.test(amostra1, amostra2, paired = FALSE)
+ 
+ t.test(amostra1, amostra2, paired = FALSE)
+
+ 
+ #Questão 7. Teste Qui-quadrado para aderência
